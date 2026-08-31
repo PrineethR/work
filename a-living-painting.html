@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Living Painting — Prineeth Ramachandra</title>
+<meta name="description" content="An interactive projection mapping installation on Van Gogh's Starry Night, HKU Utrecht 2023.">
+<script>document.documentElement.className='js'</script>
+<link rel="stylesheet" href="assets/site.css?v=7">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div id="gate" class="gate" role="dialog" aria-modal="true" aria-label="Passcode required">
+  <div class="gate__card">
+    <p class="gate__author">Prineeth Ramachandra</p>
+    <p class="gate__subtitle mono">Portfolio Preview</p>
+    <form id="gate-form" class="gate__form" autocomplete="off">
+      <div class="gate__field">
+        <input id="gate-pass" class="gate__input mono" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" aria-label="Enter passcode" autofocus required />
+        <button class="gate__submit" type="submit" aria-label="Unlock portfolio"><span class="mono">Enter &rarr;</span></button>
+      </div>
+      <p id="gate-error" class="gate__error mono" aria-live="polite"></p>
+    </form>
+    <p class="gate__hint mono">Private preview &#183; Bengaluru</p>
+  </div>
+</div>
+
+<div class="shell">
+  <nav class="index" aria-label="Work and sections" data-open="false">
+    <p class="index__name"><a href="index.html">Prineeth Ramachandra</a></p>
+    <button class="index__toggle" type="button" aria-expanded="true" hidden>Index</button>
+    <div class="index__lists">
+      <ul>
+        <li><a href="axis.html">Axis Bank</a><span class="index__yr">2023</span></li>
+        <li><a href="a-living-painting.html" aria-current="page">A Living Painting</a><span class="index__yr">2023</span></li>
+        <li><a href="naptick.html">Naptick</a><span class="index__yr">2025</span></li>
+        <li><a href="build-it-yourself.html">Build-It-Yourself</a><span class="index__yr">2019</span></li>
+        <li><a href="research.html">Research</a><span class="index__yr">2019</span></li>
+      </ul>
+      <ul>
+        <li><span class="index__stub">Individualised Learning Plans</span><span class="index__yr">2018</span></li>
+        <li><span class="index__stub">Experiments</span></li>
+        <li><span class="index__stub">Writing</span></li>
+      </ul>
+      <p class="index__legend">Titles without a link have no page yet</p>
+      <ul>
+        <li><a href="work.html">All work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </div>
+    <p class="index__counter mono" aria-hidden="true">Section <b>01</b> / 05</p>
+  </nav>
+  <main class="plates" id="main">
+
+    <header class="masthead">
+      <h1>A Living Painting</h1>
+      <p class="masthead__venue">University of the Arts Utrecht<br>Exchange programme, 2023</p>
+      <div class="specs mono">
+        <div>Role <span>Solo — concept to build</span></div>
+        <div>Medium <span>Projection mapping</span></div>
+        <div>Viewing time <span>18 s &#8594; 3.2 min</span></div>
+        <div>Principles <span>Playful &#183; Poetic</span></div>
+      </div>
+    </header>
+
+    <figure class="plate" data-cue="01" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/alp/2.jpg" alt="Overview — the installation running on Starry Night" fetchpriority="high" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">01</span>
+        <p class="plate__text">Overview — the installation running on Starry Night</p>
+        <button class="plate__note" type="button" data-cue="01" aria-label="Read the text about plate 01">Note ↓</button>
+        <p class="plate__data mono">Interactive projection mapping · solo project · University of the Arts Utrecht</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="02" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/alp/3.jpg" alt="Developing the concept — what is so great about this painting?" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">02</span>
+        <p class="plate__text">Developing the concept — what is so great about this painting?</p>
+        <button class="plate__note" type="button" data-cue="02" aria-label="Read the text about plate 02">Note ↓</button>
+        <p class="plate__data mono">Research with 17 participants</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="02" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/alp/4.jpg" alt="Building context — observation, surveys, expert input" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">03</span>
+        <p class="plate__text">Building context — observation, surveys, expert input</p>
+        <button class="plate__note" type="button" data-cue="02" aria-label="Read the text about plate 03">Note ↓</button>
+        <p class="plate__data mono">32 gallery visitors tracked · 45 art and non-art students surveyed</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="03" tabindex="-1">
+      <div class="plate__frame">
+        <video class="plate__video" poster="assets/img/alp/gif1-still.jpg" muted loop playsinline
+          preload="none" width="480" height="852" aria-label="The painting responding to viewer movement">
+          <source src="assets/img/alp/gif1.mp4" type="video/mp4">
+        </video>
+        <button class="plate__playtoggle mono" type="button" aria-pressed="false">Play</button>
+      </div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">04</span>
+        <p class="plate__text">The painting responding to viewer movement</p>
+        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 04">Note ↓</button>
+        <p class="plate__data mono">Documentation clip, silent · 0:11</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="03" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/alp/6.jpg" alt="The TouchDesigner patch and the interaction model" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">05</span>
+        <p class="plate__text">The TouchDesigner patch and the interaction model</p>
+        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 05">Note ↓</button>
+        <p class="plate__data mono">Touch along X and Y · tilt forward and backward</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="04" tabindex="-1">
+      <div class="plate__frame">
+        <video class="plate__video" poster="assets/img/alp/gif3-still.jpg" muted loop playsinline
+          preload="none" width="620" height="1104" aria-label="Proximity layers — technique up close, context from afar">
+          <source src="assets/img/alp/gif3.mp4" type="video/mp4">
+        </video>
+        <button class="plate__playtoggle mono" type="button" aria-pressed="false">Play</button>
+      </div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">06</span>
+        <p class="plate__text">Proximity layers — technique up close, context from afar</p>
+        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 06">Note ↓</button>
+        <p class="plate__data mono">Documentation clip, silent · 0:07</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="04" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/alp/7.jpg" alt="Outcomes and recognition" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">07</span>
+        <p class="plate__text">Outcomes and recognition</p>
+        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 07">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="05" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/alp/8.jpg" alt="Testimonials" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">08</span>
+        <p class="plate__text">Testimonials</p>
+        <button class="plate__note" type="button" data-cue="05" aria-label="Read the text about plate 08">Note ↓</button>
+        <p class="plate__data mono">Prof. Booij, interaction design, HKU · digital experience team, Van Gogh Museum</p>
+      </figcaption>
+    </figure>
+
+    <figure class="pull">
+      <blockquote>The result had some kind of hypnotic power over the audience. The fact
+        that it's controlled by a user makes it even more special. You give a person a kind
+        of ownership during a brief time of the artwork's life.</blockquote>
+      <figcaption class="mono">Prof. Booij — interaction design, HKU</figcaption>
+    </figure>
+
+  </main>
+  <aside class="essay" aria-label="Project text">
+    <h2>Project</h2>
+
+    <p data-cue="01" tabindex="-1">An interactive projection mapping installation that turns
+      Van Gogh's <cite>Starry Night</cite> into something that responds to where you are
+      standing and how you move. Built solo during my exchange at the University of the Arts
+      Utrecht. Median viewing time went from eighteen seconds to three minutes and twelve.</p>
+
+    <p data-cue="02" tabindex="-1">It started from a question I was slightly embarrassed to
+      ask: <button class="cue" type="button" data-cue="02" aria-label="Go to the concept plates">what
+      is so great about this painting?</button> It turned out plenty of people shared the
+      sentiment. Research with 17 participants, observation of 32 gallery visitors and surveys
+      of 45 art and non-art students converged on four barriers — a knowledge gap around
+      technique and context, a passive format that conflicts with interactive expectations,
+      physical distance that reduces intimacy, and a fixed perspective that leaves nothing to
+      discover.</p>
+
+    <p data-cue="03" tabindex="-1">The build is a TouchDesigner patch driving displacement,
+      blur and feedback across two video sources, with <button class="cue" type="button"
+      data-cue="03" aria-label="Go to the interaction plates">touch along two axes and
+      tilt</button> as the input. The constraint I set myself was that the painting had to
+      stay recognisably the painting: the viewer changes it, but does not replace it.</p>
+
+    <p data-cue="04" tabindex="-1">Proximity does the real work. Up close you get technique;
+      from further back you get context — which produced three times more physical exploration
+      of the viewing space. Motion-triggered layers surfaced details people had looked past:
+      "I never noticed these details in the original painting." Elements that needed more than
+      one viewer to trigger generated unprompted conversations about technique between
+      strangers.</p>
+
+    <p data-cue="05" tabindex="-1">The line I keep is from a visitor: "for the first time, I
+      feel like I understand why his brushwork matters." I pitched the concept to the Van Gogh
+      Museum in Amsterdam, where the conversation turned — correctly — to artistic integrity,
+      conservation, visitor flow and how you would ever measure impact.</p>
+
+    <p class="colophon mono">Documentation frames from the running installation. The original
+      painting appears as research context.</p>
+  </aside>
+</div>
+
+<script src="assets/site.js?v=7"></script>
+</body>
+</html>

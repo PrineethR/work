@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Build-It-Yourself — Prineeth Ramachandra</title>
+<meta name="description" content="A phygital learning system that generates building instructions from materials children already have.">
+<script>document.documentElement.className='js'</script>
+<link rel="stylesheet" href="assets/site.css?v=7">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div id="gate" class="gate" role="dialog" aria-modal="true" aria-label="Passcode required">
+  <div class="gate__card">
+    <p class="gate__author">Prineeth Ramachandra</p>
+    <p class="gate__subtitle mono">Portfolio Preview</p>
+    <form id="gate-form" class="gate__form" autocomplete="off">
+      <div class="gate__field">
+        <input id="gate-pass" class="gate__input mono" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" aria-label="Enter passcode" autofocus required />
+        <button class="gate__submit" type="submit" aria-label="Unlock portfolio"><span class="mono">Enter &rarr;</span></button>
+      </div>
+      <p id="gate-error" class="gate__error mono" aria-live="polite"></p>
+    </form>
+    <p class="gate__hint mono">Private preview &#183; Bengaluru</p>
+  </div>
+</div>
+
+<div class="shell">
+  <nav class="index" aria-label="Work and sections" data-open="false">
+    <p class="index__name"><a href="index.html">Prineeth Ramachandra</a></p>
+    <button class="index__toggle" type="button" aria-expanded="true" hidden>Index</button>
+    <div class="index__lists">
+      <ul>
+        <li><a href="axis.html">Axis Bank</a><span class="index__yr">2023</span></li>
+        <li><a href="a-living-painting.html">A Living Painting</a><span class="index__yr">2023</span></li>
+        <li><a href="naptick.html">Naptick</a><span class="index__yr">2025</span></li>
+        <li><a href="build-it-yourself.html" aria-current="page">Build-It-Yourself</a><span class="index__yr">2019</span></li>
+        <li><a href="research.html">Research</a><span class="index__yr">2019</span></li>
+      </ul>
+      <ul>
+        <li><span class="index__stub">Individualised Learning Plans</span><span class="index__yr">2018</span></li>
+        <li><span class="index__stub">Experiments</span></li>
+        <li><span class="index__stub">Writing</span></li>
+      </ul>
+      <p class="index__legend">Titles without a link have no page yet</p>
+      <ul>
+        <li><a href="work.html">All work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </div>
+    <p class="index__counter mono" aria-hidden="true">Section <b>01</b> / 07</p>
+  </nav>
+  <main class="plates" id="main">
+
+    <header class="masthead">
+      <h1>Build-It-Yourself</h1>
+      <p class="masthead__venue">Thakkarbapanagar English School, Ahmedabad<br>2019 — 2020</p>
+      <div class="specs mono">
+        <div>Role <span>Concept, research, design</span></div>
+        <div>Users <span>Children aged 8–12</span></div>
+        <div>Testing <span>8 teacher–student pairs</span></div>
+        <div>Principles <span>Playful &#183; Participatory</span></div>
+      </div>
+    </header>
+
+    <figure class="plate" data-cue="01" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/header.jpg" alt="Build-It-Yourself — building with what you already have" fetchpriority="high" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">01</span>
+        <p class="plate__text">Build-It-Yourself — building with what you already have</p>
+        <button class="plate__note" type="button" data-cue="01" aria-label="Read the text about plate 01">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="01" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/1.jpg" alt="Context — cardboard in and around the school" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">02</span>
+        <p class="plate__text">Context — cardboard in and around the school</p>
+        <button class="plate__note" type="button" data-cue="01" aria-label="Read the text about plate 02">Note ↓</button>
+        <p class="plate__data mono">Observation with students, Ahmedabad</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="02" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/2.jpg" alt="Research and framing" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">03</span>
+        <p class="plate__text">Research and framing</p>
+        <button class="plate__note" type="button" data-cue="02" aria-label="Read the text about plate 03">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="02" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/3.jpg" alt="Material categorisation for algorithmic matching" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">04</span>
+        <p class="plate__text">Material categorisation for algorithmic matching</p>
+        <button class="plate__note" type="button" data-cue="02" aria-label="Read the text about plate 04">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="03" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/4.jpg" alt="Design considerations — four principles" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">05</span>
+        <p class="plate__text">Design considerations — four principles</p>
+        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 05">Note ↓</button>
+        <p class="plate__data mono">Resource adaptability &#183; phygital integration &#183; learning-centred &#183; dual-user</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="03" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/5.jpg" alt="System architecture" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">06</span>
+        <p class="plate__text">System architecture</p>
+        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 06">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="04" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/6.jpg" alt="Concept development" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">07</span>
+        <p class="plate__text">Concept development</p>
+        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 07">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="04" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/7.jpg" alt="Flows and early screens" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">08</span>
+        <p class="plate__text">Flows and early screens</p>
+        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 08">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="05" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/8.jpg" alt="Prototyping in the classroom" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">09</span>
+        <p class="plate__text">Prototyping in the classroom</p>
+        <button class="plate__note" type="button" data-cue="05" aria-label="Read the text about plate 09">Note ↓</button>
+        <p class="plate__data mono">Cardboard T-Rex and helicopter &#183; tested with 8 teacher–student pairs</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="05" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/9.jpg" alt="Testing and iteration" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">10</span>
+        <p class="plate__text">Testing and iteration</p>
+        <button class="plate__note" type="button" data-cue="05" aria-label="Read the text about plate 10">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="06" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/10.jpg" alt="Revised flows" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">11</span>
+        <p class="plate__text">Revised flows</p>
+        <button class="plate__note" type="button" data-cue="06" aria-label="Read the text about plate 11">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="06" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/11.jpg" alt="Materials, troubleshooting, offline and privacy" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">12</span>
+        <p class="plate__text">Materials, troubleshooting, offline and privacy</p>
+        <button class="plate__note" type="button" data-cue="06" aria-label="Read the text about plate 12">Note ↓</button>
+        <p class="plate__data mono">Wireframes for the revised information architecture</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate" data-cue="07" tabindex="-1">
+      <div class="plate__frame"><img src="assets/img/biy/12.jpg" alt="Thoughts and reflections" loading="lazy" width="1800" height="1012"></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">13</span>
+        <p class="plate__text">Thoughts and reflections</p>
+        <button class="plate__note" type="button" data-cue="07" aria-label="Read the text about plate 13">Note ↓</button>
+        <p class="plate__data mono">Feedback from an EdTech product manager, a professor of social work, and a parent</p>
+      </figcaption>
+    </figure>
+
+    <figure class="pull">
+      <blockquote>The concept addresses a real pain point for us workers. Being able to use
+        what we already have at home instead of shopping for specific supplies would make
+        learning much more accessible for our family.</blockquote>
+      <figcaption class="mono">Parent of a 10-year-old — translated from Gujarati</figcaption>
+    </figure>
+
+  </main>
+  <aside class="essay" aria-label="Project text">
+    <h2>Project</h2>
+
+    <p data-cue="01" tabindex="-1">Making and DIY culture has arrived in education, and it
+      mostly arrives in a box you have to buy. BIY removes the kit. It is a phygital platform
+      that generates building instructions from the materials a child <em>already</em> has —
+      at home or in the classroom — using AR on the phones most families already own. The
+      starting observation was mundane and local: <button class="cue" type="button"
+      data-cue="01" aria-label="Go to the context plates">the amount of cardboard in and around
+      the school</button>.</p>
+
+    <p data-cue="02" tabindex="-1">The design problem is a matching problem. If the system is
+      going to adapt to whatever is on hand, materials have to be categorised by what they can
+      do — strength, flexibility, whether they can be cut, folded, joined, coloured — rather
+      than by what they are. Most of the early work was building conceptual frameworks for that
+      categorisation and testing whether they survived contact with a real pile of rubbish.</p>
+
+    <p data-cue="03" tabindex="-1">Four principles governed it: resource adaptability, so the
+      system offers alternatives when something is missing; phygital integration that does not
+      dilute the hands-on part; learning-centred interaction that prioritises discovery over
+      instruction-following; and a dual-user experience — simple enough for a child of eight,
+      deep enough for the teacher standing behind them. Each posed its own computational
+      problem.</p>
+
+    <p data-cue="04" tabindex="-1">From there: flows, screens, and the awkward question of how
+      much to put in front of a ten-year-old at once.</p>
+
+    <p data-cue="05" tabindex="-1">We began with the least digital experiment available —
+      <button class="cue" type="button" data-cue="05" aria-label="Go to the prototyping plates">making
+      things out of cardboard in the classroom</button>. That told us what guidance is actually
+      valuable mid-build, where frustration shows up, and how children respond to being asked
+      to repurpose things. Two forms got explored, a T-Rex and a helicopter; by popular demand
+      the T-Rex won. Testing with eight teacher–student pairs showed we needed visual
+      confirmation of material substitutions and a much simpler categorisation scheme.</p>
+
+    <p data-cue="06" tabindex="-1">The revised architecture covers exploring materials,
+      troubleshooting a build that will not stand up, working offline, and a parent-permission
+      and privacy flow — because a system that learns what a child makes is collecting data
+      about a child.</p>
+
+    <p data-cue="07" tabindex="-1">The moment that settled it: a student explaining, proudly,
+      how she had used a cardboard box from outside her house instead of chart paper. Her pride
+      wasn't diminished by the substitution — it was larger, because she had solved it herself.
+      What began as designing for resource-limited environments became the strength of the
+      thing. The unsolved part is still the algorithm: suggesting viable alternatives without
+      overwhelming a young user.</p>
+
+    <p class="colophon mono">Faces of minors obscured in the source documentation.</p>
+  </aside>
+</div>
+
+<script src="assets/site.js?v=7"></script>
+</body>
+</html>
