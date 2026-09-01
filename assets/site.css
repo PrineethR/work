@@ -54,9 +54,7 @@ img{max-width:100%;display:block}
 
 .mono{
   font-family:var(--mono);
-  font-size:.6875rem;
-  letter-spacing:.07em;
-  text-transform:uppercase;
+  font-size:.75rem;
   line-height:1.5;
 }
 
@@ -89,7 +87,7 @@ img{max-width:100%;display:block}
 .index ul{list-style:none;margin:0 0 1.6em;padding:0}
 .index li{display:grid;grid-template-columns:1fr auto;gap:.5rem;align-items:baseline}
 
-.index a{display:block;padding:.05em 0;color:var(--muted);transition:color var(--t)}
+.index a{display:block;padding:.05em 0;color:var(--muted)}
 .index a:hover{color:var(--ink)}
 .index [aria-current="page"]{color:var(--ink)}
 
@@ -98,7 +96,7 @@ img{max-width:100%;display:block}
 
 /* unbuilt pages: legible, and labelled in words, not only colour */
 .index__stub{color:var(--muted);cursor:default}
-.index__legend{color:var(--quiet);font-family:var(--mono);font-size:.5625rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.5;margin:-.9em 0 1.6em;max-width:11rem}
+.index__legend{color:var(--quiet);font-family:var(--mono);font-size:.6875rem;line-height:1.5;margin:-.9em 0 1.6em;max-width:11rem}
 
 .index__counter{
   color:var(--muted);border-top:1px solid var(--rule);
@@ -126,7 +124,7 @@ img{max-width:100%;display:block}
 }
 .specs div span{display:block;color:var(--ink)}
 
-.plate{margin:0 0 4.5rem;scroll-margin-top:var(--pad)}
+.plate{margin:0 0 3.25rem;scroll-margin-top:var(--pad)}
 
 .plate__frame{position:relative;background:#DCDDD9;overflow:hidden;border:1px solid var(--rule)}
 .plate--void .plate__frame::after{
@@ -146,8 +144,7 @@ img{max-width:100%;display:block}
   background:color-mix(in srgb, var(--paper) 80%, transparent);
   border:1px solid var(--rule);color:var(--ink);
   padding:.3rem .65rem;cursor:pointer;
-  font-family:var(--mono);font-size:.625rem;letter-spacing:.07em;text-transform:uppercase;
-  transition:border-color var(--t);
+  font-family:var(--mono);font-size:.6875rem;
 }
 .plate__playtoggle:hover{border-color:var(--quiet)}
 .plate__playtoggle[aria-pressed="true"]{opacity:.5}
@@ -160,15 +157,16 @@ img{max-width:100%;display:block}
     linear-gradient(var(--ang,168deg), var(--a,#C8CAC4) 0%, var(--b,#9EA29B) 55%, var(--c,#7C807A) 100%);
 }
 
+/* The caption is a plate label, not body copy — the narrative lives in the essay
+   column, so this stays to one quiet line and lets the images carry the page. */
 .plate__caption{
-  margin:.7rem 0 0;display:grid;
+  margin:.6rem 0 0;display:grid;
   grid-template-columns:2.6rem 1fr auto;gap:0 .75rem;
   align-items:baseline;max-width:44rem;
 }
 .plate__no{color:var(--muted);font-variant-numeric:tabular-nums}
-.plate__text{margin:0}
+.plate__text{margin:0;font-size:.9375rem;color:var(--muted)}
 .plate__text cite{font-style:italic;font-weight:300}
-.plate__data{grid-column:2/-1;margin:.15rem 0 0;color:var(--muted)}
 .plate[data-cued="true"] .plate__no{color:var(--cue)}
 
 /* a plate standing in for something not shown: NDA, unbuilt, or not photographed */
@@ -179,7 +177,7 @@ img{max-width:100%;display:block}
 .plate--void .plate__frame > span{
   position:absolute;inset:0;display:grid;place-items:center;
   color:#4A4E4A;text-align:center;padding:0 2rem;
-  font-family:var(--mono);font-size:.6875rem;letter-spacing:.07em;text-transform:uppercase;line-height:1.7;
+  font-family:var(--mono);font-size:.8125rem;line-height:1.7;
 }
 
 /* ---------- lightbox: these plates are documents, they have to be readable ---------- */
@@ -198,7 +196,7 @@ img{max-width:100%;display:block}
 }
 .lb__close{
   background:none;border:0;padding:.2rem .1rem;color:var(--ink);cursor:pointer;
-  font-family:var(--mono);font-size:.6875rem;letter-spacing:.07em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.6875rem;
   border-bottom:1px solid var(--quiet);
 }
 
@@ -221,7 +219,7 @@ img{max-width:100%;display:block}
 .doc li{margin:0 0 .35em}
 
 /* mobile-only jump from a plate to the paragraph about it */
-.plate__note{display:none;color:var(--muted);border-bottom:1px solid var(--quiet);background:none;border-width:0 0 1px;font-family:var(--mono);font-size:.625rem;letter-spacing:.07em;text-transform:uppercase;padding:0;cursor:pointer}
+.plate__note{display:none;color:var(--muted);border-bottom:1px solid var(--quiet);background:none;border-width:0 0 1px;font-family:var(--mono);font-size:.6875rem;padding:0;cursor:pointer}
 
 /* ---------- right: essay ---------- */
 
@@ -232,13 +230,11 @@ img{max-width:100%;display:block}
   overflow-y:auto;overscroll-behavior:contain;
   scrollbar-width:thin;scrollbar-color:var(--rule) transparent;
   padding-left:1rem;margin-left:-1rem;width:100%;
-  /* the column is scrollable — say so at its edge rather than cutting a line dead */
-  -webkit-mask-image:linear-gradient(#000 calc(100% - 2rem),transparent);
-  mask-image:linear-gradient(#000 calc(100% - 2rem),transparent);
+  padding-bottom:2.5rem;
 }
 .essay > h2{
-  font-family:var(--mono);font-size:.6875rem;letter-spacing:.07em;
-  text-transform:uppercase;color:var(--muted);font-weight:400;margin:0 0 1.6em;
+  font-family:var(--mono);font-size:.75rem;
+  color:var(--muted);font-weight:400;margin:0 0 1.6em;
 }
 .essay p{margin:0 0 1.15em;text-wrap:pretty}
 
@@ -267,7 +263,12 @@ img{max-width:100%;display:block}
    Index page — the list previews itself
    ============================================================ */
 
-.lede{font-size:clamp(1.6rem,2.5vw,2.25rem);line-height:1.24;font-weight:300;max-width:20ch;margin:0 0 3.5rem;letter-spacing:-.005em}
+/* text-wrap:pretty keeps the last line from ending on a single orphaned word,
+   at any width — safer than tuning the measure by hand */
+.lede{
+  font-size:clamp(1.45rem,2.1vw,1.95rem);line-height:1.28;font-weight:300;
+  max-width:30ch;margin:0 0 3.5rem;letter-spacing:-.005em;text-wrap:pretty;
+}
 .lede em{font-style:italic}
 
 .worklist{list-style:none;margin:0;padding:0;max-width:52rem}
@@ -277,9 +278,8 @@ img{max-width:100%;display:block}
 .worklist a,.worklist .stub{
   display:grid;grid-template-columns:2.6rem 1fr 10rem 3.5rem;gap:1rem;
   align-items:baseline;padding:.95rem 0;
-  transition:padding-left var(--t),color var(--t);
 }
-.worklist a:hover,.worklist a:focus-visible{padding-left:.6rem}
+.worklist a:hover cite,.worklist a:focus-visible cite{color:var(--cue)}
 .worklist .stub{color:var(--muted)}
 .worklist cite{font-style:italic;font-weight:300;font-size:1.35rem;line-height:1.1}
 .worklist .m,.worklist .no{color:var(--muted)}
@@ -287,7 +287,7 @@ img{max-width:100%;display:block}
 
 .preview{position:sticky;top:var(--pad)}
 .preview__frame{position:relative;background:#DCDDD9;overflow:hidden;border:1px solid var(--rule)}
-.preview__frame > img{display:block;width:100%;height:auto;transition:opacity var(--t)}
+.preview__frame > img{display:block;width:100%;height:auto}
 .preview__cap{margin:.7rem 0 0;color:var(--muted)}
 .preview__note{margin:2.5rem 0 0;padding-top:.7rem;border-top:1px solid var(--rule);color:var(--quiet)}
 .preview__cap b{display:block;color:var(--ink);font-weight:400;font-style:italic;font-family:var(--serif);font-size:.9375rem;letter-spacing:0;text-transform:none;margin-bottom:.15rem}
@@ -295,30 +295,35 @@ img{max-width:100%;display:block}
 /* CV */
 .prose{max-width:34rem}
 .cv{margin:0}
-.cv__row{display:grid;grid-template-columns:4rem 1fr;gap:.2rem 1rem;border-top:1px solid var(--rule);padding:.7rem 0}
+.cv__row{display:grid;grid-template-columns:8.5rem 1fr;gap:.2rem 1.25rem;border-top:1px solid var(--rule);padding:.7rem 0}
 .cv__row:last-child{border-bottom:1px solid var(--rule)}
 .cv dt{color:var(--muted)}
 .cv dd{margin:0}
 .cv dd b{font-weight:400}
 .cv__note{color:var(--muted);display:block;margin-top:.15em}
-.label{font-family:var(--mono);font-size:.6875rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:400;margin:3rem 0 .8rem}
+.label{font-family:var(--mono);font-size:.75rem;color:var(--muted);font-weight:400;margin:3rem 0 .8rem}
 
 /* ============================================================
-   Motion — one entrance, and only if scripting is available
+   Motion
+   ------------------------------------------------------------
+   Deliberately almost nothing. Only three things move, and each
+   one is load-bearing rather than decorative:
+
+     1. the parallel-read cue (.essay p[data-cue]) — the mechanism
+        that ties the essay column to the plate you are looking at
+     2. the passcode gate dissolving into the site — a genuine
+        change of state between two different screens
+     3. scrolling triggered by the reader (cue jumps, essay sync)
+
+   Everything else — the page-load settle, hover nudges on the work
+   list, colour fades on nav links, gate field transitions — was cut.
+   Those fired constantly during ordinary browsing and added nothing
+   but motion. Hover and focus still respond; they just respond now
+   instead of easing.
    ============================================================ */
 
-/* One entrance, on load, CSS only — content is never hidden waiting on script.
-   The masthead settles, the first plate follows it. Nothing else moves. */
-@media (prefers-reduced-motion:no-preference){
-  .masthead,.plates > .plate:first-of-type,.lede{
-    animation:settle 620ms cubic-bezier(.2,.7,.2,1) both;
-  }
-  .plates > .plate:first-of-type{animation-delay:120ms}
-  @keyframes settle{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-}
-
 @media (prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto !important;animation:none !important}
+  *{scroll-behavior:auto !important;animation:none !important;transition:none !important}
 }
 
 /* ============================================================
@@ -330,7 +335,7 @@ img{max-width:100%;display:block}
 }
 
 @media (max-height:620px){
-  .essay{position:static;max-height:none;overflow:visible;-webkit-mask-image:none;mask-image:none}
+  .essay{position:static;max-height:none;overflow:visible}
 }
 
 @media (max-width:900px){
@@ -341,7 +346,7 @@ img{max-width:100%;display:block}
   .index__counter{display:none}
   .index__toggle{
     display:block;width:100%;text-align:left;background:none;border:0;padding:0;
-    font-family:var(--mono);font-size:.6875rem;letter-spacing:.07em;text-transform:uppercase;
+    font-family:var(--mono);font-size:.6875rem;
     color:var(--muted);cursor:pointer;
   }
   .index__toggle::after{content:" +"}
@@ -350,8 +355,7 @@ img{max-width:100%;display:block}
   .index[data-open="true"] .index__lists{display:block}
   .index__name{margin-bottom:.9em}
 
-  .essay{position:static;max-height:none;overflow:visible;max-width:40rem;padding-left:0;margin-left:0;width:auto;
-         -webkit-mask-image:none;mask-image:none}
+  .essay{position:static;max-height:none;overflow:visible;max-width:40rem;padding-left:0;margin-left:0;width:auto}
   .plate__note{display:inline-block;justify-self:end;align-self:baseline}
   .plate{margin-bottom:3rem}
 
@@ -419,9 +423,7 @@ html.unlocked .gate {
 
 .gate__subtitle {
   color: var(--muted);
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
   margin: 0 0 2rem;
 }
 
@@ -449,7 +451,6 @@ html.unlocked .gate {
   border: 1px solid var(--rule);
   border-radius: 0;
   outline: none;
-  transition: border-color var(--t), box-shadow var(--t);
   -webkit-appearance: none;
 }
 
@@ -477,10 +478,7 @@ html.unlocked .gate {
   align-items: center;
   justify-content: center;
   font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: opacity var(--t), background var(--t);
+  font-size: 0.75rem;
 }
 
 .gate__submit:hover {
@@ -492,9 +490,7 @@ html.unlocked .gate {
   margin: 0.9rem 0 0;
   color: #a33;
   font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 @media (prefers-color-scheme: dark) {

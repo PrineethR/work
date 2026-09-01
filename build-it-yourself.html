@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Build-It-Yourself — Prineeth Ramachandra</title>
 <meta name="description" content="A phygital learning system that generates building instructions from materials children already have.">
-<script>document.documentElement.className='js'</script>
-<link rel="stylesheet" href="assets/site.css?v=7">
+<script>try{document.documentElement.className='js'+(sessionStorage.getItem('portfolio_unlocked')==='1'?' unlocked':'')}catch(e){document.documentElement.className='js'}</script>
+<link rel="stylesheet" href="assets/site.css?v=12">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -61,7 +61,6 @@
         <div>Role <span>Concept, research, design</span></div>
         <div>Users <span>Children aged 8–12</span></div>
         <div>Testing <span>8 teacher–student pairs</span></div>
-        <div>Principles <span>Playful &#183; Participatory</span></div>
       </div>
     </header>
 
@@ -69,7 +68,7 @@
       <div class="plate__frame"><img src="assets/img/biy/header.jpg" alt="Build-It-Yourself — building with what you already have" fetchpriority="high" width="1800" height="1012"></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">01</span>
-        <p class="plate__text">Build-It-Yourself — building with what you already have</p>
+        <p class="plate__text">Building with what you already have</p>
         <button class="plate__note" type="button" data-cue="01" aria-label="Read the text about plate 01">Note ↓</button>
       </figcaption>
     </figure>
@@ -80,12 +79,11 @@
         <span class="plate__no mono">02</span>
         <p class="plate__text">Context — cardboard in and around the school</p>
         <button class="plate__note" type="button" data-cue="01" aria-label="Read the text about plate 02">Note ↓</button>
-        <p class="plate__data mono">Observation with students, Ahmedabad</p>
       </figcaption>
     </figure>
 
-    <figure class="plate" data-cue="02" tabindex="-1">
-      <div class="plate__frame"><img src="assets/img/biy/2.jpg" alt="Research and framing" loading="lazy" width="1800" height="1012"></div>
+    <figure class="plate plate--void" data-cue="02" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Research documentation to be added</span></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">03</span>
         <p class="plate__text">Research and framing</p>
@@ -102,13 +100,12 @@
       </figcaption>
     </figure>
 
-    <figure class="plate" data-cue="03" tabindex="-1">
-      <div class="plate__frame"><img src="assets/img/biy/4.jpg" alt="Design considerations — four principles" loading="lazy" width="1800" height="1012"></div>
+    <figure class="plate plate--void" data-cue="03" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Design principles visual to be added</span></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">05</span>
-        <p class="plate__text">Design considerations — four principles</p>
+        <p class="plate__text">Four design principles</p>
         <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 05">Note ↓</button>
-        <p class="plate__data mono">Resource adaptability &#183; phygital integration &#183; learning-centred &#183; dual-user</p>
       </figcaption>
     </figure>
 
@@ -143,9 +140,8 @@
       <div class="plate__frame"><img src="assets/img/biy/8.jpg" alt="Prototyping in the classroom" loading="lazy" width="1800" height="1012"></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">09</span>
-        <p class="plate__text">Prototyping in the classroom</p>
+        <p class="plate__text">Prototyping — 8 teacher–student pairs</p>
         <button class="plate__note" type="button" data-cue="05" aria-label="Read the text about plate 09">Note ↓</button>
-        <p class="plate__data mono">Cardboard T-Rex and helicopter &#183; tested with 8 teacher–student pairs</p>
       </figcaption>
     </figure>
 
@@ -171,27 +167,18 @@
       <div class="plate__frame"><img src="assets/img/biy/11.jpg" alt="Materials, troubleshooting, offline and privacy" loading="lazy" width="1800" height="1012"></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">12</span>
-        <p class="plate__text">Materials, troubleshooting, offline and privacy</p>
+        <p class="plate__text">Materials, troubleshooting, offline, privacy</p>
         <button class="plate__note" type="button" data-cue="06" aria-label="Read the text about plate 12">Note ↓</button>
-        <p class="plate__data mono">Wireframes for the revised information architecture</p>
       </figcaption>
     </figure>
 
-    <figure class="plate" data-cue="07" tabindex="-1">
-      <div class="plate__frame"><img src="assets/img/biy/12.jpg" alt="Thoughts and reflections" loading="lazy" width="1800" height="1012"></div>
+    <figure class="plate plate--void" data-cue="07" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Reflections visual to be added</span></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">13</span>
         <p class="plate__text">Thoughts and reflections</p>
         <button class="plate__note" type="button" data-cue="07" aria-label="Read the text about plate 13">Note ↓</button>
-        <p class="plate__data mono">Feedback from an EdTech product manager, a professor of social work, and a parent</p>
       </figcaption>
-    </figure>
-
-    <figure class="pull">
-      <blockquote>The concept addresses a real pain point for us workers. Being able to use
-        what we already have at home instead of shopping for specific supplies would make
-        learning much more accessible for our family.</blockquote>
-      <figcaption class="mono">Parent of a 10-year-old — translated from Gujarati</figcaption>
     </figure>
 
   </main>
@@ -200,7 +187,7 @@
 
     <p data-cue="01" tabindex="-1">Making and DIY culture has arrived in education, and it
       mostly arrives in a box you have to buy. BIY removes the kit. It is a phygital platform
-      that generates building instructions from the materials a child <em>already</em> has —
+      that generates building instructions from the materials a child already has —
       at home or in the classroom — using AR on the phones most families already own. The
       starting observation was mundane and local: <button class="cue" type="button"
       data-cue="01" aria-label="Go to the context plates">the amount of cardboard in and around
@@ -209,18 +196,25 @@
     <p data-cue="02" tabindex="-1">The design problem is a matching problem. If the system is
       going to adapt to whatever is on hand, materials have to be categorised by what they can
       do — strength, flexibility, whether they can be cut, folded, joined, coloured — rather
-      than by what they are. Most of the early work was building conceptual frameworks for that
-      categorisation and testing whether they survived contact with a real pile of rubbish.</p>
+      than by what they are. Most of the early work was building frameworks for that
+      categorisation and testing whether they survived contact with a real pile of rubbish.
+      Contextual inquiry with 15 children and 6 teachers confirmed that children were most
+      engaged when using familiar objects in unfamiliar ways — the "wait, you can make that
+      from this?" moment.</p>
 
-    <p data-cue="03" tabindex="-1">Four principles governed it: resource adaptability, so the
-      system offers alternatives when something is missing; phygital integration that does not
-      dilute the hands-on part; learning-centred interaction that prioritises discovery over
-      instruction-following; and a dual-user experience — simple enough for a child of eight,
-      deep enough for the teacher standing behind them. Each posed its own computational
-      problem.</p>
+    <p data-cue="03" tabindex="-1">Four principles governed the design: resource adaptability,
+      so the system offers alternatives when something is missing; phygital integration that
+      does not dilute the hands-on part; learning-centred interaction that prioritises
+      discovery over instruction-following; and a dual-user experience — simple enough for a
+      child of eight, deep enough for the teacher standing behind them. Each one posed its own
+      computational problem, which is a polite way of saying each one was harder to implement
+      than to write down.</p>
 
     <p data-cue="04" tabindex="-1">From there: flows, screens, and the awkward question of how
-      much to put in front of a ten-year-old at once.</p>
+      much to put in front of a ten-year-old at once. The emotional journey we mapped went from
+      excitement at the start, to frustration on encountering missing materials, to either
+      abandonment or pride depending on whether a substitution was found. The interface had to
+      catch people at the frustration point — which is a narrow window when you are eight.</p>
 
     <p data-cue="05" tabindex="-1">We began with the least digital experiment available —
       <button class="cue" type="button" data-cue="05" aria-label="Go to the prototyping plates">making
@@ -228,24 +222,26 @@
       valuable mid-build, where frustration shows up, and how children respond to being asked
       to repurpose things. Two forms got explored, a T-Rex and a helicopter; by popular demand
       the T-Rex won. Testing with eight teacher–student pairs showed we needed visual
-      confirmation of material substitutions and a much simpler categorisation scheme.</p>
+      confirmation of material substitutions and a much simpler categorisation scheme than the
+      one I was attached to.</p>
 
     <p data-cue="06" tabindex="-1">The revised architecture covers exploring materials,
       troubleshooting a build that will not stand up, working offline, and a parent-permission
       and privacy flow — because a system that learns what a child makes is collecting data
-      about a child.</p>
+      about a child, which is a sentence that should make any designer pause.</p>
 
     <p data-cue="07" tabindex="-1">The moment that settled it: a student explaining, proudly,
       how she had used a cardboard box from outside her house instead of chart paper. Her pride
-      wasn't diminished by the substitution — it was larger, because she had solved it herself.
-      What began as designing for resource-limited environments became the strength of the
-      thing. The unsolved part is still the algorithm: suggesting viable alternatives without
-      overwhelming a young user.</p>
+      was not diminished by the substitution — it was larger, because she had solved it
+      herself. What began as designing for resource-limited environments became the strength
+      of the thing. The unsolved part is still the algorithm: suggesting viable alternatives
+      without overwhelming a young user. I suspect it needs more technically strong eyes than
+      mine.</p>
 
     <p class="colophon mono">Faces of minors obscured in the source documentation.</p>
   </aside>
 </div>
 
-<script src="assets/site.js?v=7"></script>
+<script src="assets/site.js?v=12"></script>
 </body>
 </html>

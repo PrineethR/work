@@ -1,14 +1,33 @@
-/* Progressive enhancement + In-memory Passcode Gate */
+/* Progressive enhancement + Session Passcode Gate */
 (function () {
   var PASSCODE = '290796';
+  var STORAGE_KEY = 'portfolio_unlocked';
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function isUnlocked() {
+    try {
+      return sessionStorage.getItem(STORAGE_KEY) === '1' || window.__portfolioUnlocked === true;
+    } catch (e) {
+      return !!window.__portfolioUnlocked;
+    }
+  }
+
+  function setUnlocked() {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, '1');
+    } catch (e) {}
+    window.__portfolioUnlocked = true;
+  }
 
   /* ---- Passcode Gate ---- */
   function initGate() {
-    if (window.__portfolioUnlocked) {
+    if (isUnlocked()) {
       document.documentElement.classList.add('unlocked');
       var existingGate = document.getElementById('gate');
-      if (existingGate) existingGate.style.display = 'none';
+      if (existingGate) {
+        existingGate.style.display = 'none';
+        existingGate.setAttribute('aria-hidden', 'true');
+      }
       return;
     }
 
@@ -45,13 +64,14 @@
     }
 
     function unlock() {
-      window.__portfolioUnlocked = true;
+      setUnlocked();
       document.documentElement.classList.add('unlocked');
       if (error) error.textContent = '';
       if (input) input.value = '';
       setTimeout(function () {
         if (gate && gate.parentNode) {
           gate.setAttribute('aria-hidden', 'true');
+          gate.style.display = 'none';
         }
       }, 450);
       initPage();
@@ -346,7 +366,7 @@
           return;
         }
 
-        if (window.__portfolioUnlocked) {
+        if (isUnlocked()) {
           e.preventDefault();
           navigateTo(href, true);
         }
@@ -355,7 +375,7 @@
   }
 
   window.addEventListener('popstate', function () {
-    if (window.__portfolioUnlocked) {
+    if (isUnlocked()) {
       navigateTo(location.pathname + location.search + location.hash, false);
     }
   });
@@ -364,10 +384,10 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initGate();
-      if (window.__portfolioUnlocked) initPage();
+      if (isUnlocked()) initPage();
     });
   } else {
     initGate();
-    if (window.__portfolioUnlocked) initPage();
+    if (isUnlocked()) initPage();
   }
 })();

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>A Living Painting — Prineeth Ramachandra</title>
 <meta name="description" content="An interactive projection mapping installation on Van Gogh's Starry Night, HKU Utrecht 2023.">
-<script>document.documentElement.className='js'</script>
-<link rel="stylesheet" href="assets/site.css?v=7">
+<script>try{document.documentElement.className='js'+(sessionStorage.getItem('portfolio_unlocked')==='1'?' unlocked':'')}catch(e){document.documentElement.className='js'}</script>
+<link rel="stylesheet" href="assets/site.css?v=12">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -61,7 +61,6 @@
         <div>Role <span>Solo — concept to build</span></div>
         <div>Medium <span>Projection mapping</span></div>
         <div>Viewing time <span>18 s &#8594; 3.2 min</span></div>
-        <div>Principles <span>Playful &#183; Poetic</span></div>
       </div>
     </header>
 
@@ -69,29 +68,35 @@
       <div class="plate__frame"><img src="assets/img/alp/2.jpg" alt="Overview — the installation running on Starry Night" fetchpriority="high" width="1800" height="1012"></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">01</span>
-        <p class="plate__text">Overview — the installation running on Starry Night</p>
+        <p class="plate__text">The installation running on Starry Night</p>
         <button class="plate__note" type="button" data-cue="01" aria-label="Read the text about plate 01">Note ↓</button>
-        <p class="plate__data mono">Interactive projection mapping · solo project · University of the Arts Utrecht</p>
       </figcaption>
     </figure>
 
-    <figure class="plate" data-cue="02" tabindex="-1">
-      <div class="plate__frame"><img src="assets/img/alp/3.jpg" alt="Developing the concept — what is so great about this painting?" loading="lazy" width="1800" height="1012"></div>
+    <figure class="plate plate--void" data-cue="01" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Projection close-up to be added</span></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">02</span>
-        <p class="plate__text">Developing the concept — what is so great about this painting?</p>
-        <button class="plate__note" type="button" data-cue="02" aria-label="Read the text about plate 02">Note ↓</button>
-        <p class="plate__data mono">Research with 17 participants</p>
+        <p class="plate__text">Projection close-up — brushwork detail on wall</p>
+        <button class="plate__note" type="button" data-cue="01" aria-label="Read the text about plate 02">Note ↓</button>
       </figcaption>
     </figure>
 
-    <figure class="plate" data-cue="02" tabindex="-1">
-      <div class="plate__frame"><img src="assets/img/alp/4.jpg" alt="Building context — observation, surveys, expert input" loading="lazy" width="1800" height="1012"></div>
+    <figure class="plate plate--void" data-cue="02" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Reference image to be added</span></div>
       <figcaption class="plate__caption">
         <span class="plate__no mono">03</span>
-        <p class="plate__text">Building context — observation, surveys, expert input</p>
+        <p class="plate__text">The Starry Night — reference and context</p>
         <button class="plate__note" type="button" data-cue="02" aria-label="Read the text about plate 03">Note ↓</button>
-        <p class="plate__data mono">32 gallery visitors tracked · 45 art and non-art students surveyed</p>
+      </figcaption>
+    </figure>
+
+    <figure class="plate plate--void" data-cue="02" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Research documentation to be added</span></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">04</span>
+        <p class="plate__text">Context — observation, surveys, and the four barriers</p>
+        <button class="plate__note" type="button" data-cue="02" aria-label="Read the text about plate 04">Note ↓</button>
       </figcaption>
     </figure>
 
@@ -104,20 +109,27 @@
         <button class="plate__playtoggle mono" type="button" aria-pressed="false">Play</button>
       </div>
       <figcaption class="plate__caption">
-        <span class="plate__no mono">04</span>
-        <p class="plate__text">The painting responding to viewer movement</p>
-        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 04">Note ↓</button>
-        <p class="plate__data mono">Documentation clip, silent · 0:11</p>
+        <span class="plate__no mono">05</span>
+        <p class="plate__text">Responding to viewer movement — silent, 0:11</p>
+        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 05">Note ↓</button>
       </figcaption>
     </figure>
 
     <figure class="plate" data-cue="03" tabindex="-1">
       <div class="plate__frame"><img src="assets/img/alp/6.jpg" alt="The TouchDesigner patch and the interaction model" loading="lazy" width="1800" height="1012"></div>
       <figcaption class="plate__caption">
-        <span class="plate__no mono">05</span>
-        <p class="plate__text">The TouchDesigner patch and the interaction model</p>
-        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 05">Note ↓</button>
-        <p class="plate__data mono">Touch along X and Y · tilt forward and backward</p>
+        <span class="plate__no mono">06</span>
+        <p class="plate__text">TouchDesigner patch — displacement, blur and feedback</p>
+        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 06">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate plate--void" data-cue="03" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Interaction model diagram to be added</span></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">07</span>
+        <p class="plate__text">Interaction model — two axes and tilt mapping</p>
+        <button class="plate__note" type="button" data-cue="03" aria-label="Read the text about plate 07">Note ↓</button>
       </figcaption>
     </figure>
 
@@ -130,37 +142,28 @@
         <button class="plate__playtoggle mono" type="button" aria-pressed="false">Play</button>
       </div>
       <figcaption class="plate__caption">
-        <span class="plate__no mono">06</span>
-        <p class="plate__text">Proximity layers — technique up close, context from afar</p>
-        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 06">Note ↓</button>
-        <p class="plate__data mono">Documentation clip, silent · 0:07</p>
-      </figcaption>
-    </figure>
-
-    <figure class="plate" data-cue="04" tabindex="-1">
-      <div class="plate__frame"><img src="assets/img/alp/7.jpg" alt="Outcomes and recognition" loading="lazy" width="1800" height="1012"></div>
-      <figcaption class="plate__caption">
-        <span class="plate__no mono">07</span>
-        <p class="plate__text">Outcomes and recognition</p>
-        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 07">Note ↓</button>
-      </figcaption>
-    </figure>
-
-    <figure class="plate" data-cue="05" tabindex="-1">
-      <div class="plate__frame"><img src="assets/img/alp/8.jpg" alt="Testimonials" loading="lazy" width="1800" height="1012"></div>
-      <figcaption class="plate__caption">
         <span class="plate__no mono">08</span>
-        <p class="plate__text">Testimonials</p>
-        <button class="plate__note" type="button" data-cue="05" aria-label="Read the text about plate 08">Note ↓</button>
-        <p class="plate__data mono">Prof. Booij, interaction design, HKU · digital experience team, Van Gogh Museum</p>
+        <p class="plate__text">Proximity layers — silent, 0:07</p>
+        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 08">Note ↓</button>
       </figcaption>
     </figure>
 
-    <figure class="pull">
-      <blockquote>The result had some kind of hypnotic power over the audience. The fact
-        that it's controlled by a user makes it even more special. You give a person a kind
-        of ownership during a brief time of the artwork's life.</blockquote>
-      <figcaption class="mono">Prof. Booij — interaction design, HKU</figcaption>
+    <figure class="plate plate--void" data-cue="04" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Exhibition documentation to be added</span></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">09</span>
+        <p class="plate__text">Exhibition documentation — audience exploration</p>
+        <button class="plate__note" type="button" data-cue="04" aria-label="Read the text about plate 09">Note ↓</button>
+      </figcaption>
+    </figure>
+
+    <figure class="plate plate--void" data-cue="05" tabindex="-1">
+      <div class="plate__frame"><i style="--ar:16/9"></i><span>Museum pitch and recognition to be added</span></div>
+      <figcaption class="plate__caption">
+        <span class="plate__no mono">10</span>
+        <p class="plate__text">Van Gogh Museum pitch and recognition</p>
+        <button class="plate__note" type="button" data-cue="05" aria-label="Read the text about plate 10">Note ↓</button>
+      </figcaption>
     </figure>
 
   </main>
@@ -168,42 +171,49 @@
     <h2>Project</h2>
 
     <p data-cue="01" tabindex="-1">An interactive projection mapping installation that turns
-      Van Gogh's <cite>Starry Night</cite> into something that responds to where you are
-      standing and how you move. Built solo during my exchange at the University of the Arts
-      Utrecht. Median viewing time went from eighteen seconds to three minutes and twelve.</p>
+      Van Gogh's <cite>Starry Night</cite> into something that responds to where you stand and
+      how you move. Built solo during an exchange semester at the University of the Arts
+      Utrecht. Median viewing time went from eighteen seconds to three minutes and twelve —
+      which, for a painting most people photograph and walk away from, felt like a small
+      victory.</p>
 
     <p data-cue="02" tabindex="-1">It started from a question I was slightly embarrassed to
       ask: <button class="cue" type="button" data-cue="02" aria-label="Go to the concept plates">what
-      is so great about this painting?</button> It turned out plenty of people shared the
-      sentiment. Research with 17 participants, observation of 32 gallery visitors and surveys
-      of 45 art and non-art students converged on four barriers — a knowledge gap around
-      technique and context, a passive format that conflicts with interactive expectations,
-      physical distance that reduces intimacy, and a fixed perspective that leaves nothing to
-      discover.</p>
+      is so great about this painting?</button> Turns out plenty of people share the sentiment
+      but have better social instincts than to say it out loud. Research with 17 participants,
+      observation of 32 gallery visitors and surveys of 45 art and non-art students converged
+      on four barriers: a knowledge gap around technique and context, a passive format that
+      conflicts with how we now expect to interact with things, physical distance that
+      reduces intimacy, and a fixed perspective that leaves nothing left to find.</p>
 
     <p data-cue="03" tabindex="-1">The build is a TouchDesigner patch driving displacement,
       blur and feedback across two video sources, with <button class="cue" type="button"
       data-cue="03" aria-label="Go to the interaction plates">touch along two axes and
       tilt</button> as the input. The constraint I set myself was that the painting had to
-      stay recognisably the painting: the viewer changes it, but does not replace it.</p>
+      stay recognisably the painting — the viewer changes it, but does not replace it. Every
+      effect maps back to something Van Gogh actually did: the swirling motion follows his
+      brushstrokes, the colour shifts follow his palette.</p>
 
     <p data-cue="04" tabindex="-1">Proximity does the real work. Up close you get technique;
       from further back you get context — which produced three times more physical exploration
-      of the viewing space. Motion-triggered layers surfaced details people had looked past:
-      "I never noticed these details in the original painting." Elements that needed more than
-      one viewer to trigger generated unprompted conversations about technique between
-      strangers.</p>
+      of the viewing space than the static version. Motion-triggered layers surfaced details
+      people had looked past: "I never noticed these details in the original painting."
+      Elements that needed more than one viewer to trigger generated unprompted conversations
+      about technique between strangers — which was not something I had designed for, but
+      probably should have.</p>
 
     <p data-cue="05" tabindex="-1">The line I keep is from a visitor: "for the first time, I
       feel like I understand why his brushwork matters." I pitched the concept to the Van Gogh
       Museum in Amsterdam, where the conversation turned — correctly — to artistic integrity,
-      conservation, visitor flow and how you would ever measure impact.</p>
+      conservation, visitor flow and how you would ever measure impact on something this
+      subjective. Prof. Booij described the result as having "some kind of hypnotic power
+      over the audience." What mattered to me was simpler: people stayed.</p>
 
     <p class="colophon mono">Documentation frames from the running installation. The original
       painting appears as research context.</p>
   </aside>
 </div>
 
-<script src="assets/site.js?v=7"></script>
+<script src="assets/site.js?v=12"></script>
 </body>
 </html>
