@@ -1,113 +1,131 @@
 <!doctype html>
 <html lang="en" class="no-js">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Prineeth Ramachandra — design, play, tech, humans</title>
-<meta name="description" content="Prineeth Ramachandra designs interactions at the convergence of humans, play, tech and design.">
-<script>try{document.documentElement.className='js'+(sessionStorage.getItem('portfolio_unlocked')==='1'?' unlocked':'')}catch(e){document.documentElement.className='js'}</script>
-<link rel="stylesheet" href="assets/site.css?v=21">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Prineeth Ramachandra — design, play, tech, humans</title>
+  <meta name="description"
+    content="Prineeth Ramachandra designs interactions at the convergence of humans, play, tech and design.">
+  <script>try { document.documentElement.className = 'js' + (sessionStorage.getItem('portfolio_unlocked') === '1' ? ' unlocked' : '') } catch (e) { document.documentElement.className = 'js' }</script>
+  <link rel="stylesheet" href="assets/site.css?v=21">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
+
 <body>
-<a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-<div id="gate" class="gate" role="dialog" aria-modal="true" aria-label="Passcode required">
-  <div class="gate__card">
-    <p class="gate__author">Prineeth Ramachandra</p>
-    <p class="gate__subtitle mono">Portfolio Preview</p>
-    <form id="gate-form" class="gate__form" autocomplete="off">
-      <div class="gate__field">
-        <input id="gate-pass" class="gate__input mono" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" aria-label="Enter passcode" autofocus required />
-        <button class="gate__submit" type="submit" aria-label="Unlock portfolio"><span class="mono">Enter &rarr;</span></button>
+  <div id="gate" class="gate" role="dialog" aria-modal="true" aria-label="Passcode required">
+    <div class="gate__card">
+      <p class="gate__author">Prineeth Ramachandra</p>
+      <p class="gate__subtitle mono">Portfolio Preview</p>
+      <form id="gate-form" class="gate__form" autocomplete="off">
+        <div class="gate__field">
+          <input id="gate-pass" class="gate__input mono" type="password" inputmode="numeric" pattern="[0-9]*"
+            maxlength="6" placeholder="••••••" aria-label="Enter passcode" autofocus required />
+          <button class="gate__submit" type="submit" aria-label="Unlock portfolio"><span class="mono">Enter
+              &rarr;</span></button>
+        </div>
+        <p id="gate-error" class="gate__error mono" aria-live="polite"></p>
+      </form>
+      <p class="gate__hint mono">Private preview &#183; Bengaluru</p>
+    </div>
+  </div>
+
+  <section class="overture" id="overture" aria-label="Introduction">
+    <div class="overture__bar">
+      <p class="overture__mark">Prineeth Ramachandra</p>
+      <a class="overture__down" href="#main" aria-label="Index, Information"><span aria-hidden="true">&darr;</span></a>
+    </div>
+    <div class="overture__reel" id="reel" aria-label="Paintings in passing. Press and hold to stop the drift.">
+      <div class="overture__strip" id="strip">
+        <figure class="frame frame--t">
+          <span class="frame__mount" style="--ar:512/620"><img src="assets/img/hero/paint5.jpg"
+              alt="A folded white cloth hanging against a dark ground" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--m">
+          <span class="frame__mount" style="--ar:620/447"><img src="assets/img/hero/paint2.jpg"
+              alt="A crowded village scene packed with dozens of small figures" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--l">
+          <span class="frame__mount" style="--ar:593/620"><img src="assets/img/hero/paint1.jpg"
+              alt="A man in a wide hat striding past a cottage with a dog at his heels" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--s">
+          <span class="frame__mount" style="--ar:496/620"><img src="assets/img/hero/paint9.jpg"
+              alt="A man in a black hat leaning forward and pointing at the viewer" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--m">
+          <span class="frame__mount" style="--ar:620/344"><img src="assets/img/hero/paint6.jpg"
+              alt="A lone figure on a country road under a wide pale sky" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--t">
+          <span class="frame__mount" style="--ar:522/620"><img src="assets/img/hero/paint3.jpg"
+              alt="Villagers struggling with animals and carts in a tangle of activity" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--l">
+          <span class="frame__mount" style="--ar:620/502"><img src="assets/img/hero/paint4.jpg"
+              alt="A woman tending a child at a table while a man rests his head on his hand" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--s">
+          <span class="frame__mount" style="--ar:538/620"><img src="assets/img/hero/paint8.jpg"
+              alt="A figure on a path between two rows of pollarded willows" decoding="async"></span>
+        </figure>
+        <figure class="frame frame--m">
+          <span class="frame__mount" style="--ar:489/620"><img src="assets/img/hero/paint7.jpg"
+              alt="A woman in a pale gown beside a seated man in a panelled interior" decoding="async"></span>
+        </figure>
       </div>
-      <p id="gate-error" class="gate__error mono" aria-live="polite"></p>
-    </form>
-    <p class="gate__hint mono">Private preview &#183; Bengaluru</p>
-  </div>
-</div>
-
-<section class="overture" id="overture" aria-label="Introduction">
-  <div class="overture__bar">
-    <p class="overture__mark">Prineeth Ramachandra</p>
-    <a class="overture__down" href="#main">Index, Information <span aria-hidden="true">&darr;</span></a>
-  </div>
-  <div class="overture__reel" id="reel" aria-label="Paintings in passing. Press and hold to stop the drift.">
-    <div class="overture__strip" id="strip">
-      <figure class="frame frame--t">
-        <span class="frame__mount" style="--ar:512/620"><img src="assets/img/hero/paint5.jpg" alt="A folded white cloth hanging against a dark ground" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--m">
-        <span class="frame__mount" style="--ar:620/447"><img src="assets/img/hero/paint2.jpg" alt="A crowded village scene packed with dozens of small figures" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--l">
-        <span class="frame__mount" style="--ar:593/620"><img src="assets/img/hero/paint1.jpg" alt="A man in a wide hat striding past a cottage with a dog at his heels" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--s">
-        <span class="frame__mount" style="--ar:496/620"><img src="assets/img/hero/paint9.jpg" alt="A man in a black hat leaning forward and pointing at the viewer" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--m">
-        <span class="frame__mount" style="--ar:620/344"><img src="assets/img/hero/paint6.jpg" alt="A lone figure on a country road under a wide pale sky" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--t">
-        <span class="frame__mount" style="--ar:522/620"><img src="assets/img/hero/paint3.jpg" alt="Villagers struggling with animals and carts in a tangle of activity" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--l">
-        <span class="frame__mount" style="--ar:620/502"><img src="assets/img/hero/paint4.jpg" alt="A woman tending a child at a table while a man rests his head on his hand" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--s">
-        <span class="frame__mount" style="--ar:538/620"><img src="assets/img/hero/paint8.jpg" alt="A figure on a path between two rows of pollarded willows" decoding="async"></span>
-      </figure>
-      <figure class="frame frame--m">
-        <span class="frame__mount" style="--ar:489/620"><img src="assets/img/hero/paint7.jpg" alt="A woman in a pale gown beside a seated man in a panelled interior" decoding="async"></span>
-      </figure>
     </div>
+  </section>
+
+  <div class="shell">
+    <nav class="index" aria-label="Work and sections" data-open="false">
+      <p class="index__name"><a href="index.html" aria-current="page">Prineeth Ramachandra</a></p>
+      <button class="index__toggle" type="button" aria-expanded="true" hidden>Index</button>
+      <div class="index__lists">
+        <ul>
+          <li><a href="axis.html">Axis Bank</a><span class="index__yr">2023</span></li>
+          <li><a href="a-living-painting.html">A Living Painting</a><span class="index__yr">2023</span></li>
+          <li><a href="naptick.html">Naptick</a><span class="index__yr">2025</span></li>
+          <li><a href="build-it-yourself.html">Build-It-Yourself</a><span class="index__yr">2019</span></li>
+          <li><a href="research.html">Research</a><span class="index__yr">2019</span></li>
+        </ul>
+        <ul>
+          <li><span class="index__stub">Individualised Learning Plans</span><span class="index__yr">2018</span></li>
+          <li><span class="index__stub">Experiments</span></li>
+          <li><span class="index__stub">Writing</span></li>
+        </ul>
+        <p class="index__legend">Titles without a link have no page yet</p>
+        <ul>
+          <li><a href="work.html">All work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cv.html">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="plates" id="main">
+      <header class="masthead">
+        <h1>Prineeth Ramachandra</h1>
+        <p class="lede">His practice examines the physical and digital artifacts of daily rituals:
+          how we play, how we rest, and how we exist with technology.
+          His work interrogates inherited conventions within teaching and design practice. He focuses on deliberate
+          breakage: dismantling assumed principles to test their structural necessity.
+      </header>
+    </main>
+    <aside class="essay" aria-label="Note">
+      <h2>Note</h2>
+      <p>Bengaluru. Currently designing hardware for sleep, and reading more about
+        absurdism than is strictly necessary.</p>
+      <p>Open to work — consulting, collaboration, or a good argument.</p>
+      <p><a href="mailto:prineethr@gmail.com">prineethr@gmail.com</a></p>
+      <p class="colophon mono"><a href="work.html">Selected work</a> &#183;
+        <a href="about.html">about</a> &#183; <a href="cv.html">CV</a>
+      </p>
+    </aside>
   </div>
-</section>
 
-<div class="shell">
-  <nav class="index" aria-label="Work and sections" data-open="false">
-    <p class="index__name"><a href="index.html" aria-current="page">Prineeth Ramachandra</a></p>
-    <button class="index__toggle" type="button" aria-expanded="true" hidden>Index</button>
-    <div class="index__lists">
-      <ul>
-        <li><a href="axis.html">Axis Bank</a><span class="index__yr">2023</span></li>
-        <li><a href="a-living-painting.html">A Living Painting</a><span class="index__yr">2023</span></li>
-        <li><a href="naptick.html">Naptick</a><span class="index__yr">2025</span></li>
-        <li><a href="build-it-yourself.html">Build-It-Yourself</a><span class="index__yr">2019</span></li>
-        <li><a href="research.html">Research</a><span class="index__yr">2019</span></li>
-      </ul>
-      <ul>
-        <li><span class="index__stub">Individualised Learning Plans</span><span class="index__yr">2018</span></li>
-        <li><span class="index__stub">Experiments</span></li>
-        <li><span class="index__stub">Writing</span></li>
-      </ul>
-      <p class="index__legend">Titles without a link have no page yet</p>
-      <ul>
-        <li><a href="work.html">All work</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
-    </div>
-  </nav>
-  <main class="plates" id="main">
-    <header class="masthead">
-      <h1>Prineeth Ramachandra</h1>
-      <p class="lede">Designs interactions at the convergence of humans, play, tech and
-        design — sound systems for banks, cardboard toys for classrooms,
-        <em>paintings that move when you do.</em></p>
-    </header>
-  </main>
-  <aside class="essay" aria-label="Note">
-    <h2>Note</h2>
-    <p>Bengaluru. Currently designing hardware for sleep, and reading more about
-      absurdism than is strictly necessary.</p>
-    <p>Open to work — consulting, collaboration, or a good argument.</p>
-    <p><a href="mailto:prineethr@gmail.com">prineethr@gmail.com</a></p>
-    <p class="colophon mono"><a href="work.html">Selected work</a> &#183;
-      <a href="about.html">about</a> &#183; <a href="cv.html">CV</a></p>
-  </aside>
-</div>
-
-<script src="assets/site.js?v=21"></script>
+  <script src="assets/site.js?v=21"></script>
 </body>
+
 </html>

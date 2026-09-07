@@ -581,9 +581,10 @@ html.unlocked .gate {
 }
 .overture__down{
   font-family:var(--mono);
-  font-size:.75rem;
+  font-size:1.5rem;
   color:var(--muted);
   white-space:nowrap;
+  line-height:1;
 }
 .overture__down:hover{color:var(--ink)}
 
