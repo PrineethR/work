@@ -372,14 +372,17 @@ img{max-width:100%;display:block}
    Passcode Gate
    ============================================================ */
 
-/* Hide shell until unlocked to prevent any content flash */
-html:not(.unlocked) .shell {
+/* Hide the page until unlocked to prevent any content flash. The overture is
+   listed alongside .shell because it lives outside it, being full-bleed. */
+html:not(.unlocked) .shell,
+html:not(.unlocked) #overture {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
 }
 
-html.unlocked .shell {
+html.unlocked .shell,
+html.unlocked #overture {
   opacity: 1;
   visibility: visible;
   transition: opacity 450ms cubic-bezier(.2,.6,.2,1);
@@ -519,4 +522,168 @@ html.unlocked .gate {
   20%, 80% { transform: translate3d(2px, 0, 0); }
   30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
   40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* ============================================================
+   Overture — the landing page's first screen
+   ------------------------------------------------------------
+   One viewport, and nothing in it but the mark, a drifting reel
+   of paintings, and the way down. The site proper begins one
+   scroll later in normal document flow — no scroll-jacking and
+   no pinned overlay, so a wheel flick or a tap on End still works.
+
+   Ported from a separate sketch, with two things left behind:
+
+     1. its fonts and its pure-white ground. A Fraunces / Space
+        Grotesk hero on #FFF would announce a different site than
+        the Newsreader one it reveals a scroll later, so this uses
+        the site's own tokens and inherits dark mode for free.
+     2. its wireframe placeholder boxes, which read as unfinished
+        on a real portfolio.
+
+   What was kept is the mechanic: a slow horizontal drift at mixed
+   frame sizes, bottom-aligned on a shared shelf, that stops while
+   you hold it.
+
+   Sizing note: only the HEIGHT varies, in four steps. Width follows
+   each painting's own aspect ratio, so the reel gets its rhythm from
+   a salon hang rather than from cropping — cropping a painting to
+   fit a box costs more than it buys.
+   ============================================================ */
+
+.overture{
+  height:100svh;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* Same max-width, centring and padding as .shell. Without this the bar spans
+   the full window while the shell centres itself inside 112rem, so past that
+   width the mark drifts out of line with the column that follows it. */
+.overture__bar{
+  flex:none;
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:1rem;
+  width:100%;
+  max-width:112rem;
+  margin:0 auto;
+  padding:var(--pad) var(--pad) 0;
+}
+.overture__mark{
+  margin:0;
+  font-style:italic;
+  font-weight:300;
+  font-size:1rem;
+}
+.overture__down{
+  font-family:var(--mono);
+  font-size:.75rem;
+  color:var(--muted);
+  white-space:nowrap;
+}
+.overture__down:hover{color:var(--ink)}
+
+/* ---------- the reel ---------- */
+
+.overture__reel{
+  position:relative;
+  flex:1 1 auto;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  min-height:0;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.overture__strip{
+  display:flex;
+  align-items:flex-end;
+  width:max-content;
+  /* No padding at all. Horizontal padding would land in scrollWidth without
+     belonging to the repeating set, and translateX(-50%) would then overshoot
+     the loop period by that much and visibly jump at the seam; bottom padding
+     left a dead band under the pictures once the frames came off. */
+  padding:0;
+}
+
+/* the drift needs JS to have cloned the set, or the second half of the
+   loop is empty space — so it is gated on both .js and the clone flag */
+.js .overture__strip[data-looped="true"]{
+  animation:overture-drift 78s linear infinite;
+}
+.overture__reel[data-held="true"] .overture__strip{animation-play-state:paused}
+/* don't composite a 5000px strip while the reader is further down the page */
+.overture__reel[data-seen="false"] .overture__strip{animation-play-state:paused}
+
+@keyframes overture-drift{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ---------- a frame ---------- */
+
+/* No frame, no mount, no gutter: the paintings butt straight up against one
+   another and read as one continuous band. They still never overlap — each is
+   a flex item at its own width. */
+.frame{
+  flex:none;
+  margin:0;
+  padding:0;
+}
+/* height is the variable; width comes from --ar, so nothing is cropped */
+.frame__mount{
+  position:relative;
+  display:block;
+  height:var(--h);
+  aspect-ratio:var(--ar);
+  width:auto;
+}
+.frame__mount img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* four height steps, bottom-aligned: the shelf they stand on is the rhythm */
+.frame--t{--h:min(clamp(15rem,34vw,25rem),58svh)}
+.frame--l{--h:min(clamp(12rem,26vw,20rem),50svh)}
+.frame--m{--h:min(clamp(9rem,19vw,14.5rem),40svh)}
+.frame--s{--h:min(clamp(7rem,14vw,11rem),30svh)}
+
+/* On a phone the rem floors above win over the vw terms and each frame fills
+   most of the screen, which stops the reel reading as a stream — three frames
+   in view is the point of it. Lower the floors rather than the whole scale. */
+@media (max-width:640px){
+  .frame--t{--h:min(clamp(10rem,46vw,15rem),40svh)}
+  .frame--l{--h:min(clamp(8.5rem,38vw,12rem),34svh)}
+  .frame--m{--h:min(clamp(6.5rem,29vw,9rem),26svh)}
+  .frame--s{--h:min(clamp(5rem,22vw,7rem),20svh)}
+}
+
+/* The landing page shows the name in the overture and again in the masthead, so
+   the index column's copy is redundant there — but simply removing it shifts the
+   whole column up by its height, and since the router swaps .shell in place that
+   shift is visible every time you arrive at the index from another page. Keep the
+   box, hide the text. Keyed off the overture, which exists only on the landing
+   page, so no other page is affected. */
+.overture ~ .shell .index__name{visibility:hidden}
+
+/* the site proper starts here — a hairline says so.
+   min-height matters: the index's own content is only ~600px tall, so without
+   it the document is shorter than overture + viewport and the last ~300px of
+   the overture can never be scrolled away — the reveal would never complete. */
+.overture + .shell{
+  border-top:1px solid var(--rule);
+  min-height:100svh;
+}
+
+/* with motion off, the reel stops being a marquee and becomes a shelf you
+   can push — the global reduce rule already killed the animation */
+@media (prefers-reduced-motion:reduce){
+  .overture__reel{overflow-x:auto;overscroll-behavior-x:contain}
 }

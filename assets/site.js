@@ -120,6 +120,75 @@
       scrollCleanup = null;
     }
 
+    /* ---- overture reel ----
+       The strip drifts by exactly -50%, so the set has to be present twice or
+       the second half of the loop is empty space. Cloning here rather than in
+       the markup keeps index.html readable and leaves a static, scrollable
+       shelf of real frames when JS never arrives. */
+    var reel = document.querySelector('.overture__reel');
+    var strip = reel && reel.querySelector('.overture__strip');
+
+    if (strip && strip.dataset.looped !== 'true') {
+      [].slice.call(strip.children).forEach(function (f) {
+        var copy = f.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        strip.appendChild(copy);
+      });
+      strip.dataset.looped = 'true';
+    }
+
+    if (reel && !reel.__wired) {
+      reel.__wired = true;
+
+      /* press and hold, not click to toggle: the drift is ambient, and a
+         reader who wants to look at one frame wants it to stop only while
+         they are looking */
+      var hold = function (on) { reel.dataset.held = String(on); };
+      ['pointerdown'].forEach(function (e) { reel.addEventListener(e, function () { hold(true); }); });
+      ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (e) {
+        reel.addEventListener(e, function () { hold(false); });
+      });
+      reel.tabIndex = 0;
+      reel.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hold(true); }
+      });
+      reel.addEventListener('keyup', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { hold(false); }
+      });
+
+      /* stop compositing a 3000px strip once the reader has scrolled past it */
+      if ('IntersectionObserver' in window) {
+        reel.dataset.seen = 'true';
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) { reel.dataset.seen = String(e.isIntersecting); });
+        }, { threshold: 0 }).observe(reel);
+      }
+    }
+
+    /* The way down, eased rather than jumped. This scrolls to the overture's
+       own bottom edge rather than to #main: #main sits below the shell's top
+       padding, and on a short page the document may not be tall enough for it
+       to reach the top of the viewport, which silently strands the scroll. */
+    var down = document.querySelector('.overture__down');
+    if (down && !down.__wired) {
+      down.__wired = true;
+      down.addEventListener('click', function (e) {
+        e.preventDefault();
+        var ov = document.getElementById('overture');
+        var target = ov ? ov.offsetHeight : innerHeight;
+        var start = window.scrollY;
+        window.scrollTo({ top: target, behavior: reduce ? 'auto' : 'smooth' });
+        /* Some embedded webviews accept a smooth scroll and then never run the
+           animation, which would leave this link doing nothing at all. If the
+           page has not moved a pixel shortly after, jump instead. Comparing
+           against `start` rather than 0 means a reader who scrolls themselves
+           in the meantime is not fought for control. */
+        setTimeout(function () {
+          if (window.scrollY === start) window.scrollTo(0, target);
+        }, 450);
+      });
+    }
+
     /* ---- collapsible index (small screens) ---- */
     var nav = document.querySelector('.index');
     var toggle = nav && nav.querySelector('.index__toggle');
@@ -341,6 +410,18 @@
         var currentShell = document.querySelector('.shell');
         if (newShell && currentShell) {
           currentShell.replaceWith(newShell);
+        }
+
+        /* The overture is full-bleed, so it sits outside .shell and the shell
+           swap alone would leave it stranded on top of a project page — or
+           drop it when coming back to the index. Sync it in both directions. */
+        var curOv = document.getElementById('overture');
+        var newOv = doc.getElementById('overture');
+        if (curOv && !newOv) {
+          curOv.remove();
+        } else if (!curOv && newOv) {
+          var shellNow = document.querySelector('.shell');
+          if (shellNow) shellNow.parentNode.insertBefore(document.importNode(newOv, true), shellNow);
         }
 
         if (push) {
